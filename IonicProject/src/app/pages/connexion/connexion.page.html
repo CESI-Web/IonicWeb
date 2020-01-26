@@ -4,6 +4,20 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="card-background-page">
+  <ion-card>
 
+    <div class="card-title">Connexion</div>
+          <ion-item>
+          	<img src="/assets/WebExport/bg_SOCOPEC_test.png"/>
+            <ion-label position="stacked">First Name <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input required type="text" oninput="handleFirstNameValue(event)"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Last Name <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input required type="text" oninput="handleLastNameValue(event)"></ion-input>
+          </ion-item>
+    <ion-button expand="block" routerLink="//menu-principal">Connexion</ion-button> 
+  </ion-card>
 </ion-content>
