@@ -11,10 +11,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/connexion/connexion.module').then( m => m.ConnexionPageModule)
   },
   {
-    path: 'page-connexion',
-    loadChildren: () => import('./pages/page-connexion/page-connexion.module').then( m => m.PageConnexionPageModule)
-  },
-  {
     path: 'menu-principal',
     loadChildren: () => import('./pages/menu-principal/menu-principal.module').then( m => m.MenuPrincipalPageModule)
   },
