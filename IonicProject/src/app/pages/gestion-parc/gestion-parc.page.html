@@ -5,14 +5,11 @@
 </ion-header>
 
 <ion-content>
-    <ion-button expand="block" routerLink="/menu-principal">Ajouter véhicule</ion-button> 
+    <ion-button expand="block">Ajouter véhicule</ion-button> 
 
-<ion-card routerLink="/detail-vehicule">
+<ion-card>
   <ion-card-header>
 <ion-item>
-  <ion-avatar>
-
-  </ion-avatar>
   <ion-label center text-center>Elevateur à nacelle 121F</ion-label>
 </ion-item>
   </ion-card-header>
@@ -24,7 +21,7 @@
         </button>
       </ion-col>
       <ion-col >
-        <button>
+        <button routerLink="/detail-vehicule">
           <ion-button color="danger">Détails</ion-button>
           <br>
           <div>AC-879-ZE</div>
@@ -35,6 +32,12 @@
         </button>
       </ion-col>
      </ion-row>
+    <ion-item>
+ 		<ion-label center text-center>Elevateur à nacelle 121F</ion-label>
+	</ion-item>
+	<ion-item>
+ 		<ion-label center text-center>Elevateur à nacelle 121F</ion-label>
+	</ion-item>
   </ion-card-content>
 </ion-card>
 

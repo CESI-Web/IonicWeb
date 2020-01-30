@@ -37,7 +37,11 @@ const routes: Routes = [
   {
     path: 'gestion-assignation',
     loadChildren: () => import('./pages/gestion-assignation/gestion-assignation.module').then( m => m.GestionAssignationPageModule)
+  },  {
+    path: 'vehicule-spec',
+    loadChildren: () => import('./pages/vehicule-spec/vehicule-spec.module').then( m => m.VehiculeSpecPageModule)
   }
+
 ];
 @NgModule({
   imports: [
