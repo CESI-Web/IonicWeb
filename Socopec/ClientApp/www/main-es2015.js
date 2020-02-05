@@ -710,10 +710,6 @@ const routes = [
         loadChildren: () => __webpack_require__.e(/*! import() | pages-gestion-parc-gestion-parc-module */ "pages-gestion-parc-gestion-parc-module").then(__webpack_require__.bind(null, /*! ./pages/gestion-parc/gestion-parc.module */ "./src/app/pages/gestion-parc/gestion-parc.module.ts")).then(m => m.GestionParcPageModule)
     },
     {
-        path: 'detail-vehicule',
-        loadChildren: () => __webpack_require__.e(/*! import() | pages-detail-vehicule-detail-vehicule-module */ "pages-detail-vehicule-detail-vehicule-module").then(__webpack_require__.bind(null, /*! ./pages/detail-vehicule/detail-vehicule.module */ "./src/app/pages/detail-vehicule/detail-vehicule.module.ts")).then(m => m.DetailVehiculePageModule)
-    },
-    {
         path: 'gestion-agent',
         loadChildren: () => __webpack_require__.e(/*! import() | pages-gestion-agent-gestion-agent-module */ "pages-gestion-agent-gestion-agent-module").then(__webpack_require__.bind(null, /*! ./pages/gestion-agent/gestion-agent.module */ "./src/app/pages/gestion-agent/gestion-agent.module.ts")).then(m => m.GestionAgentPageModule)
     },

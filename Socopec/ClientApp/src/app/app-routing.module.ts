@@ -19,10 +19,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/gestion-parc/gestion-parc.module').then( m => m.GestionParcPageModule)
   },
   {
-    path: 'detail-vehicule',
-    loadChildren: () => import('./pages/detail-vehicule/detail-vehicule.module').then( m => m.DetailVehiculePageModule)
-  },
-  {
     path: 'gestion-agent',
     loadChildren: () => import('./pages/gestion-agent/gestion-agent.module').then( m => m.GestionAgentPageModule)
   },
@@ -37,7 +33,8 @@ const routes: Routes = [
   {
     path: 'gestion-assignation',
     loadChildren: () => import('./pages/gestion-assignation/gestion-assignation.module').then( m => m.GestionAssignationPageModule)
-  },  {
+  },
+  {
     path: 'vehicule-spec',
     loadChildren: () => import('./pages/vehicule-spec/vehicule-spec.module').then( m => m.VehiculeSpecPageModule)
   }
