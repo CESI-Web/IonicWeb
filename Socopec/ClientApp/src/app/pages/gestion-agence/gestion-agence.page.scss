@@ -1,5 +1,5 @@
 ion-content{
-    --background: #fff url('/assets/WebExport/bg_SOCOPEC_test.png') no-repeat center center / cover;
+    --background: #fff url('/assets/WebExport/Back_sans_logo.png') no-repeat center center / cover;
     
 }
 ion-card{
@@ -9,15 +9,22 @@ ion-card{
 
 .round {
 	position: relative;
-    margin:auto;
-    margin-top:23vh;
+    margin-top:12vh;
 }
+
+
 
 ion-card-header{
 	padding-bottom:5px;
 }
 
-.one{
-	position: relative;
-    margin-top:1vh;
+.fatPicture{
+	padding-top: 15px;
+}
+
+.logo{
+	margin-top:10vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
 }
