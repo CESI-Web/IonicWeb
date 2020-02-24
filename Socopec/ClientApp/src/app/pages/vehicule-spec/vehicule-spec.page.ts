@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-vehicule-spec',
@@ -7,9 +9,42 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VehiculeSpecPage implements OnInit {
 
-  constructor() { }
-
   ngOnInit() {
   }
 
+  public forecasts: Vehicule[];
+
+  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+    http.get<Vehicule[]>(baseUrl + 'Vehicule').subscribe(result => {
+      this.forecasts = result;
+    }, error => console.error(error));
+  }
+}
+
+
+
+
+
+interface Vehicule {
+  VEHI_Id: number;
+  VEHI_DateCirculation: number;
+  VEHI_Immatriculation: string;
+}
+
+interface Modele {
+  MODE_Id: number;
+  MODE_Libelle: string;
+  MODE_Hauteur: number;
+  MODE_Largeur: number;
+  MODE_Longueur: number;
+  MODE_Puissance: number;
+  MODE_Type: string;
+}
+
+interface Agence {
+  AGEC_Id: number;
+  AGEC_Nom: string;
+  AGEC_Adresse: string;
+  AGEC_Telephone: number;
+  AGEC_Fax: number;
 }
