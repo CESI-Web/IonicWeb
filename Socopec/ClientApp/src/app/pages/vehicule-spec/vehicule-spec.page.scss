@@ -1,5 +1,5 @@
 ion-content{
-    --background: #fff url('/assets/WebExport/bg_SOCOPEC_test.png') no-repeat center center / cover;
+    --background: #fff url('/assets/WebExport/Back_sans_logo.png') no-repeat center center / cover;
     
 }
 ion-card{
@@ -16,3 +16,16 @@ ion-card{
 
 }
 
+
+
+.one{
+	position: relative;
+    margin-top:12vh;
+}
+
+.logo{
+	margin-top:10vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
