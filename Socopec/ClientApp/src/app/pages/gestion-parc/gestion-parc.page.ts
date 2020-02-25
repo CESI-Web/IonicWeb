@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -8,11 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GestionParcPage implements OnInit {
 
-  constructor() { }
+  public vehicules: Vehicule[];
 
-
+  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+    http.get<Vehicule[]>(baseUrl + 'Vehicule').subscribe(result => {
+      this.vehicules = result;
+    }, error => console.error(error));
+  }
 
   ngOnInit() {
   }
 
+}
+
+interface Vehicule {
+  VehiId: number;
+  VehiModeId: number;
+  VehiAgecId: number;
+  VehiStatId: number;
+  VehiDateCirculation: Date;
+  VehiImmatriculation: string;
+  VehiModifUtilisateur: number;
+  VehiModifDate: Date;
+  VehiCreationUtilisateur: number;
+  VehiArchiveDate: Date;
 }

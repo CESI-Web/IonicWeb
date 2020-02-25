@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Socopec.Models;
 
 namespace Socopec.Controllers
 {
@@ -11,10 +12,6 @@ namespace Socopec.Controllers
     [Route("[controller]")]
     public class VehiculeController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "AW-689-HS", "ZF-239-HR", "RF-109-JJ", "OP-542-HH", "WW-767-GH", "WW-154-WW"
-        };
 
         private readonly ILogger<VehiculeController> _logger;
 
@@ -23,17 +20,27 @@ namespace Socopec.Controllers
             _logger = logger;
         }
 
-    [HttpGet]
-    public IEnumerable<Vehicule> Get()
-    {
-        var rng = new Random();
-        return Enumerable.Range(1, 2).Select(index => new Vehicule
+         public void GetDataFromDB()
         {
-            VEHI_id = 4,
-            VEHI_DateFabrication = DateTime.Today,
-            VEHI_Immatriculation = Summaries[rng.Next(Summaries.Length)]    
-        })
-        .ToArray();
-    }
+
+             
+        }
+
+        [HttpGet]
+        public IEnumerable<Vehicules> Get()
+        {
+            using (socopecContext db = new socopecContext())
+            {
+                var Information = db.Vehicules.ToArray();
+
+                return Information.ToArray();
+            }        
+        }
+
+
+
+
+
+
     }
 }

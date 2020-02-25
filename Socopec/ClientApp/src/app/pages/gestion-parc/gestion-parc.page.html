@@ -3,12 +3,19 @@
     <img class='logo' src="/assets/WebExport/logo.png" alt="ion" routerLink="/menu-principal">
     <ion-button class="round" expand="block" >Ajouter véhicule</ion-button> 
 
-<ion-card>
+
+
+
+
+
+
+<ion-card *ngFor="let vehicule of vehicules">
   <ion-card-header>
 <ion-item>
-  <ion-label center text-center>Elevateur à nacelle 121F</ion-label>
+  <ion-label center text-center>{{vehicule.vehiModeId}}</ion-label>
 </ion-item>
   </ion-card-header>
+
   <ion-card-content center text-center>
     <ion-row>
       <ion-col center text-center>
@@ -18,14 +25,14 @@
       </ion-col>
       <ion-col >
 
-          <ion-button size="small" color="danger" routerLink="/vehicule-spec">Détails</ion-button>
+          <ion-button size="small" color="danger" routerLink="/vehicule-spec/{{vehicule.vehiId}}">Détails</ion-button>
           
           <ion-item>
             <ion-chip>
               <ion-avatar>
                 <img src="/assets/WebExport/Icon awesome-exclamation-Fat.png">
               </ion-avatar>
-              <ion-label>En maintenance</ion-label>
+              <ion-label>{{vehicule.vehiStatId}}</ion-label>
             </ion-chip>
             </ion-item>
           <ion-item>
@@ -33,7 +40,7 @@
               <ion-avatar>
                 <img src="/assets/WebExport/Icon-Agence2Map.png">
               </ion-avatar>
-              <ion-label>Aix-en-Provence</ion-label>
+              <ion-label>{{vehicule.vehiAgecId}}</ion-label>
             </ion-chip>
             </ion-item>
 
@@ -42,7 +49,7 @@
               <ion-avatar>
                 <img src="/assets/WebExport/Icon material-card-membershipFat.png">
               </ion-avatar>
-              <ion-label>ZY-837-XE</ion-label>
+              <ion-label>{{vehicule.vehiImmatriculation}}</ion-label>
             </ion-chip>
             </ion-item>
       </ion-col>
@@ -53,162 +60,7 @@
 
 
 
-<ion-card>
-  <ion-card-header>
-<ion-item>
-  <ion-avatar>
 
-  </ion-avatar>
-  <ion-label center text-center>Elevateur à nacelle 162F</ion-label>
-</ion-item>
-  </ion-card-header>
-  <ion-card-content center text-center>
-    <ion-row>
-      <ion-col center text-center>
-
-			<img src="/assets/WebExport/Image_1.png" alt="ion">
-        
-      </ion-col>
-      <ion-col >
-
-
-          <ion-button size="small" color="danger" routerLink="/vehicule-spec">Détails</ion-button>
-          
-          <ion-item>
-            <ion-chip>
-              <ion-avatar>
-                <img src="/assets/WebExport/Icon awesome-exclamation-Fat.png">
-              </ion-avatar>
-              <ion-label>En maintenance</ion-label>
-            </ion-chip>
-            </ion-item>
-          <ion-item>
-            <ion-chip>
-              <ion-avatar>
-                <img src="/assets/WebExport/Icon-Agence2Map.png">
-              </ion-avatar>
-              <ion-label>Aix-en-Provence</ion-label>
-            </ion-chip>
-            </ion-item>
-
-            <ion-item>
-            <ion-chip>
-              <ion-avatar>
-                <img src="/assets/WebExport/Icon material-card-membershipFat.png">
-              </ion-avatar>
-              <ion-label>AC-879-ZE</ion-label>
-            </ion-chip>
-            </ion-item>
-        
-      </ion-col>
-     </ion-row>
-  </ion-card-content>
-</ion-card>
-
-
-<ion-card>
-  <ion-card-header>
-<ion-item>
-  <ion-avatar>
-
-  </ion-avatar>
-  <ion-label center text-center>Nacelle araignée TR 170</ion-label>
-</ion-item>
-  </ion-card-header>
-  <ion-card-content center text-center>
-    <ion-row>
-      <ion-col center text-center>
-
-			<img src="/assets/WebExport/Image_1.png" alt="ion">
-        
-      </ion-col>
-      <ion-col >
-
-
-          <ion-button size="small" color="danger" routerLink="/vehicule-spec">Détails</ion-button>
-          
-          <ion-item>
-            <ion-chip>
-              <ion-avatar>
-                <img src="/assets/WebExport/Icon awesome-exclamation-Fat.png">
-              </ion-avatar>
-              <ion-label>En maintenance</ion-label>
-            </ion-chip>
-            </ion-item>
-          <ion-item>
-            <ion-chip>
-              <ion-avatar>
-                <img src="/assets/WebExport/Icon-Agence2Map.png">
-              </ion-avatar>
-              <ion-label>Aix-en-Provence</ion-label>
-            </ion-chip>
-            </ion-item>
-
-            <ion-item>
-            <ion-chip>
-              <ion-avatar>
-                <img src="/assets/WebExport/Icon material-card-membershipFat.png">
-              </ion-avatar>
-              <ion-label>AC-879-ZE</ion-label>
-            </ion-chip>
-            </ion-item>
-        
-      </ion-col>
-     </ion-row>
-  </ion-card-content>
-</ion-card>
-
-
-<ion-card>
-  <ion-card-header>
-<ion-item>
-  <ion-avatar>
-
-  </ion-avatar>
-  <ion-label center text-center>Elevateur</ion-label>
-</ion-item>
-  </ion-card-header>
-  <ion-card-content center text-center>
-    <ion-row>
-      <ion-col center text-center>
-
-			<img src="/assets/WebExport/Image_1.png" alt="ion">
-        
-      </ion-col>
-      <ion-col >
-
- 
-          <ion-button size="small" color="danger" routerLink="/vehicule-spec">Détails</ion-button>
-          
-          <ion-item>
-            <ion-chip>
-              <ion-avatar>
-                <img src="/assets/WebExport/Icon awesome-exclamation-Fat.png">
-              </ion-avatar>
-              <ion-label>En maintenance</ion-label>
-            </ion-chip>
-            </ion-item>
-          <ion-item>
-            <ion-chip>
-              <ion-avatar>
-                <img src="/assets/WebExport/Icon-Agence2Map.png">
-              </ion-avatar>
-              <ion-label>Aix-en-Provence</ion-label>
-            </ion-chip>
-            </ion-item>
-
-            <ion-item>
-            <ion-chip>
-              <ion-avatar>
-                <img src="/assets/WebExport/Icon material-card-membershipFat.png">
-              </ion-avatar>
-              <ion-label>AC-879-ZE</ion-label>
-            </ion-chip>
-            </ion-item>
-      </ion-col>
-     </ion-row>
-  </ion-card-content>
-</ion-card>
 
 
 </ion-content>

@@ -12,11 +12,11 @@ export class VehiculeSpecPage implements OnInit {
   ngOnInit() {
   }
 
-  public forecasts: Vehicule[];
+  public vehicules: Vehicule[];
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     http.get<Vehicule[]>(baseUrl + 'Vehicule').subscribe(result => {
-      this.forecasts = result;
+      this.vehicules = result;
     }, error => console.error(error));
   }
 }
