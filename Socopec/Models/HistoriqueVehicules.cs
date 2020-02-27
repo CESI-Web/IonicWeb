@@ -14,5 +14,8 @@ namespace Socopec.Models
         public int? HistoCreationUtilisateur { get; set; }
         public DateTime? HistoCreationDate { get; set; }
         public DateTime? HistoArchiveDate { get; set; }
+
+        public virtual Agents HistoAgent { get; set; }
+        public virtual Vehicules HistoVehi { get; set; }
     }
 }

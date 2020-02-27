@@ -13,5 +13,7 @@ namespace Socopec.Models
         public DateTime? SavModifDate { get; set; }
         public int? SavCreationUtilisateur { get; set; }
         public DateTime? SavArchiveDate { get; set; }
+
+        public virtual Vehicules SavVehi { get; set; }
     }
 }

@@ -12,7 +12,7 @@
 <ion-card *ngFor="let vehicule of vehicules">
   <ion-card-header>
 <ion-item>
-  <ion-label center text-center>{{vehicule.vehiModeId}}</ion-label>
+  <ion-label center text-center>{{vehicule.modeleLibelle}}</ion-label>
 </ion-item>
   </ion-card-header>
 
@@ -20,19 +20,19 @@
     <ion-row>
       <ion-col center text-center>
 
-			<img class="fatPicture" src="/assets/WebExport/Image_1.png" alt="ion">
+			<img class="fatPicture" src="/assets/WebExport/Image_{{vehicule.modeleId}}.png" alt="ion">
         
       </ion-col>
       <ion-col >
 
-          <ion-button size="small" color="danger" routerLink="/vehicule-spec/{{vehicule.vehiId}}">Détails</ion-button>
+          <ion-button size="small" color="danger" routerLink="/vehicule-spec/{{vehicule.id}}">Détails</ion-button>
           
           <ion-item>
             <ion-chip>
               <ion-avatar>
                 <img src="/assets/WebExport/Icon awesome-exclamation-Fat.png">
               </ion-avatar>
-              <ion-label>{{vehicule.vehiStatId}}</ion-label>
+              <ion-label>{{vehicule.statutLibelle}}</ion-label>
             </ion-chip>
             </ion-item>
           <ion-item>
@@ -40,7 +40,7 @@
               <ion-avatar>
                 <img src="/assets/WebExport/Icon-Agence2Map.png">
               </ion-avatar>
-              <ion-label>{{vehicule.vehiAgecId}}</ion-label>
+              <ion-label>{{vehicule.agenceLibelle}}</ion-label>
             </ion-chip>
             </ion-item>
 
@@ -49,7 +49,7 @@
               <ion-avatar>
                 <img src="/assets/WebExport/Icon material-card-membershipFat.png">
               </ion-avatar>
-              <ion-label>{{vehicule.vehiImmatriculation}}</ion-label>
+              <ion-label>{{vehicule.immatriculation}}</ion-label>
             </ion-chip>
             </ion-item>
       </ion-col>

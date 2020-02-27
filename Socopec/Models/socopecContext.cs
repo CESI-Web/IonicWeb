@@ -30,7 +30,7 @@ namespace Socopec.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=82.64.159.75,12033;Initial Catalog=socopec;User ID=sa;Password=Password!7757;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+                optionsBuilder.UseSqlServer("Data Source=82.64.159.75,12033;User ID=sa;Password=Password!7757;Connect Timeout=30;Initial Catalog=socopec");
             }
         }
 
@@ -63,7 +63,7 @@ namespace Socopec.Models
                 entity.Property(e => e.AgecNom)
                     .IsRequired()
                     .HasColumnName("AGEC_Nom")
-                    .HasMaxLength(1);
+                    .HasMaxLength(255);
 
                 entity.Property(e => e.AgecTelephone).HasColumnName("AGEC_Telephone");
             });
@@ -101,7 +101,7 @@ namespace Socopec.Models
                 entity.Property(e => e.AgetPassword)
                     .IsRequired()
                     .HasColumnName("AGET_Password")
-                    .HasMaxLength(1);
+                    .HasMaxLength(20);
 
                 entity.Property(e => e.AgetPrenom)
                     .IsRequired()
@@ -220,6 +220,18 @@ namespace Socopec.Models
                 entity.Property(e => e.HistoModifUtilisateur).HasColumnName("HISTO_Modif_utilisateur");
 
                 entity.Property(e => e.HistoVehiId).HasColumnName("HISTO_VEHI_Id");
+
+                entity.HasOne(d => d.HistoAgent)
+                    .WithMany(p => p.HistoriqueVehicules)
+                    .HasForeignKey(d => d.HistoAgentId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__HISTORIQU__HISTO__72C60C4A");
+
+                entity.HasOne(d => d.HistoVehi)
+                    .WithMany(p => p.HistoriqueVehicules)
+                    .HasForeignKey(d => d.HistoVehiId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__HISTORIQU__HISTO__71D1E811");
             });
 
             modelBuilder.Entity<Localisations>(entity =>
@@ -275,8 +287,8 @@ namespace Socopec.Models
 
                 entity.Property(e => e.ModeLargeur).HasColumnName("MODE_Largeur");
 
-                entity.Property(e => e.ModeLebelle)
-                    .HasColumnName("MODE_Lebelle")
+                entity.Property(e => e.ModeLibelle)
+                    .HasColumnName("MODE_Libelle")
                     .HasMaxLength(255);
 
                 entity.Property(e => e.ModeLongeur).HasColumnName("MODE_Longeur");
@@ -315,6 +327,12 @@ namespace Socopec.Models
                 entity.Property(e => e.SavResolue).HasColumnName("SAV_Resolue");
 
                 entity.Property(e => e.SavVehiId).HasColumnName("SAV_VEHI_Id");
+
+                entity.HasOne(d => d.SavVehi)
+                    .WithMany(p => p.Sav)
+                    .HasForeignKey(d => d.SavVehiId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__SAV__SAV_VEHI_Id__70DDC3D8");
             });
 
             modelBuilder.Entity<Status>(entity =>
@@ -381,6 +399,24 @@ namespace Socopec.Models
                 entity.Property(e => e.VehiModifUtilisateur).HasColumnName("VEHI_Modif_Utilisateur");
 
                 entity.Property(e => e.VehiStatId).HasColumnName("VEHI_STAT_Id");
+
+                entity.HasOne(d => d.VehiAgec)
+                    .WithMany(p => p.Vehicules)
+                    .HasForeignKey(d => d.VehiAgecId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__VEHICULES__VEHI___6EF57B66");
+
+                entity.HasOne(d => d.VehiMode)
+                    .WithMany(p => p.Vehicules)
+                    .HasForeignKey(d => d.VehiModeId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__VEHICULES__VEHI___6E01572D");
+
+                entity.HasOne(d => d.VehiStat)
+                    .WithMany(p => p.Vehicules)
+                    .HasForeignKey(d => d.VehiStatId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__VEHICULES__VEHI___6FE99F9F");
             });
 
             OnModelCreatingPartial(modelBuilder);

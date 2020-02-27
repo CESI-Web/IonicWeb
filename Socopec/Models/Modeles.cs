@@ -5,8 +5,13 @@ namespace Socopec.Models
 {
     public partial class Modeles
     {
+        public Modeles()
+        {
+            Vehicules = new HashSet<Vehicules>();
+        }
+
         public int ModeId { get; set; }
-        public string ModeLebelle { get; set; }
+        public string ModeLibelle { get; set; }
         public int? ModeHauteur { get; set; }
         public int? ModeLongeur { get; set; }
         public int? ModeLargeur { get; set; }
@@ -17,5 +22,7 @@ namespace Socopec.Models
         public int? ModeCreationUtilisateur { get; set; }
         public DateTime? ModeCreationDate { get; set; }
         public DateTime? ModeArchiveDate { get; set; }
+
+        public virtual ICollection<Vehicules> Vehicules { get; set; }
     }
 }

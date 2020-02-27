@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Socopec.Models;
+using System.Collections.Generic;
+using System.Collections;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace Socopec.Controllers
 {
@@ -27,18 +27,35 @@ namespace Socopec.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Vehicules> Get()
+        public IEnumerable Get()
         {
             using (socopecContext db = new socopecContext())
             {
-                var Information = db.Vehicules.ToArray();
 
-                return Information.ToArray();
+                var query = from Vehicule in db.Set<Vehicules>()
+                            join Modele in db.Set<Modeles>()
+                              on Vehicule.VehiModeId equals Modele.ModeId
+                            join Agence in db.Set<Agences>()
+                             on Vehicule.VehiAgecId equals Agence.AgecId
+                            join Status in db.Set<Status>()
+                             on Vehicule.VehiStatId equals Status.StatId
+                            select new {
+                                id = Vehicule.VehiId,
+                                ModeleLibelle = Modele.ModeLibelle,
+                                ModeleId = Modele.ModeId,
+                                AgenceLibelle = Agence.AgecNom,
+                                StatutLibelle = Status.StatLibelle,
+                                Immatriculation = Vehicule.VehiImmatriculation
+
+                            };
+
+
+                return query.ToList();
             }        
         }
 
 
-
+    
 
 
 

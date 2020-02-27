@@ -5,6 +5,11 @@ namespace Socopec.Models
 {
     public partial class Agents
     {
+        public Agents()
+        {
+            HistoriqueVehicules = new HashSet<HistoriqueVehicules>();
+        }
+
         public int AgetId { get; set; }
         public string AgetNom { get; set; }
         public string AgetPrenom { get; set; }
@@ -16,5 +21,7 @@ namespace Socopec.Models
         public DateTime? AgetModifDate { get; set; }
         public int? AgetCreationUtilisateur { get; set; }
         public DateTime? AgetArchiveDate { get; set; }
+
+        public virtual ICollection<HistoriqueVehicules> HistoriqueVehicules { get; set; }
     }
 }
