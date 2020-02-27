@@ -12,7 +12,7 @@ export class GestionParcPage implements OnInit {
   public vehicules: Vehicule[];
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    http.get<Vehicule[]>(baseUrl + 'Vehicule').subscribe(result => {
+    http.get<any>(baseUrl + 'Vehicule').subscribe(result => {
       this.vehicules = result;
     }, error => console.error(error));
   }

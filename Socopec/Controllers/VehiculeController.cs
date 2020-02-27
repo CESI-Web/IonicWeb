@@ -32,11 +32,19 @@ namespace Socopec.Controllers
             using (socopecContext db = new socopecContext())
             {
                 var Information = db.Vehicules.ToArray();
-
                 return Information.ToArray();
-            }        
+            }
         }
+        [HttpGet]
+        public IEnumerable<Agences> GetInfo()
+        {
+            using (socopecContext db = new socopecContext())
+            {
+                var InformationAgence = db.Agences.ToArray();
+                return InformationAgence.ToArray();
+            }
 
+        }
 
 
 
