@@ -5,7 +5,7 @@
 <ion-card *ngFor="let agence of agences">
   <ion-card-header>
 <ion-item>
-  <ion-label center text-center>{{Agences.AgecId}}</ion-label>
+  <ion-label center text-center>{{agence.agecId}}</ion-label>
 </ion-item>
   </ion-card-header>
   <ion-card-content center text-center>
@@ -19,14 +19,14 @@
           <ion-item class ="one">
             <ion-chip>
                <ion-icon size="large" name="person"></ion-icon>
-              <ion-label>{{Agences.AgecNom}}</ion-label>
+              <ion-label>{{agence.agecNom}}</ion-label>
             </ion-chip>
             </ion-item>
 
           <ion-item>
             <ion-chip>
                 <ion-icon size="large" name="map"></ion-icon>
-              <ion-label>{{Agences.AgecAdresse}}</ion-label>
+              <ion-label>{{agence.agecAdresse}}</ion-label>
             </ion-chip>
             </ion-item>
       </ion-col>
