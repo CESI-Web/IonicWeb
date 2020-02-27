@@ -5,28 +5,28 @@
 <ion-card *ngFor="let agence of agences">
   <ion-card-header>
 <ion-item>
-  <ion-label center text-center>{{agence.agecId}}</ion-label>
+  <ion-label center text-center>{{agence.agence.agecNom}}</ion-label>
 </ion-item>
   </ion-card-header>
   <ion-card-content center text-center>
     <ion-row>
       <ion-col center text-center>
-			<img src="/assets/WebExport/image_agence1.png" alt="ion">
+			<img src="/assets/WebExport/image_agence{{agence.agence.agecId}}.png" alt="ion">
       </ion-col>
 
       <ion-col >
-          <ion-button size="small" color="light" routerLink="/detail-agence/{{agence.AgecId}}">Détails</ion-button>
+          <ion-button size="small" color="light" routerLink="/detail-agence/{{agence.agence.agecId}}">Détails</ion-button>
           <ion-item class ="one">
             <ion-chip>
                <ion-icon size="large" name="person"></ion-icon>
-              <ion-label>{{agence.agecNom}}</ion-label>
+               <ion-label>0{{agence.agence.agecTelephone}}</ion-label>
             </ion-chip>
             </ion-item>
 
           <ion-item>
             <ion-chip>
                 <ion-icon size="large" name="map"></ion-icon>
-              <ion-label>{{agence.agecAdresse}}</ion-label>
+                <ion-label>{{agence.agence.agecAdresse}}</ion-label>
             </ion-chip>
             </ion-item>
       </ion-col>
