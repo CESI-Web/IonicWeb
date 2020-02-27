@@ -2,10 +2,10 @@
   <img class='logo' src="/assets/WebExport/logo.png" alt="ion" routerLink="/menu-principal">
     <ion-button class="round" expand="block" >Ajouter agence</ion-button> 
 
-<ion-card>
+<ion-card *ngFor="let agence of agences">
   <ion-card-header>
 <ion-item>
-  <ion-label center text-center>Agence de Aix-en-Provence</ion-label>
+  <ion-label center text-center>{{Agences.AgecId}}</ion-label>
 </ion-item>
   </ion-card-header>
   <ion-card-content center text-center>
@@ -15,22 +15,18 @@
       </ion-col>
 
       <ion-col >
-          <ion-button size="small" color="light" routerLink="/detail-agence">Détails</ion-button>
+          <ion-button size="small" color="light" routerLink="/detail-agence/{{Agences.AgecId}}">Détails</ion-button>
           <ion-item class ="one">
             <ion-chip>
-              <ion-avatar>
-                <img src="/assets/WebExport/Icon-Agence1.png">
-              </ion-avatar>
-              <ion-label>Michel Fraise</ion-label>
+               <ion-icon size="large" name="person"></ion-icon>
+              <ion-label>{{Agences.AgecNom}}</ion-label>
             </ion-chip>
             </ion-item>
 
           <ion-item>
             <ion-chip>
-              <ion-avatar>
-                <img src="/assets/WebExport/Icon-Agence2Map.png">
-              </ion-avatar>
-              <ion-label>Aix-en-Provence</ion-label>
+                <ion-icon size="large" name="map"></ion-icon>
+              <ion-label>{{Agences.AgecAdresse}}</ion-label>
             </ion-chip>
             </ion-item>
       </ion-col>
@@ -58,18 +54,18 @@
           <ion-button size="small" color="light" routerLink="/vehicule-spec">Détails</ion-button>
           <ion-item class ="one">
             <ion-chip>
-              <ion-avatar>
-                <img src="/assets/WebExport/Icon-Agence1.png">
-              </ion-avatar>
+
+                <ion-icon size="large" name="person"></ion-icon>
+
               <ion-label>Michel Fraise</ion-label>
             </ion-chip>
             </ion-item>
 
           <ion-item>
             <ion-chip>
-              <ion-avatar>
-                <img src="/assets/WebExport/Icon-Agence2Map.png">
-              </ion-avatar>
+
+                <ion-icon size="large" name="map"></ion-icon>
+
               <ion-label>Aix-en-Provence</ion-label>
             </ion-chip>
             </ion-item>
@@ -96,18 +92,14 @@
           <ion-button size="small" color="light" routerLink="/vehicule-spec">Détails</ion-button>
           <ion-item class ="one">
             <ion-chip>
-              <ion-avatar>
-                <img src="/assets/WebExport/Icon-Agence1.png">
-              </ion-avatar>
+                  <ion-icon size="large" name="person"></ion-icon>
               <ion-label>Michel Fraise</ion-label>
             </ion-chip>
             </ion-item>
 
           <ion-item>
             <ion-chip>
-              <ion-avatar>
-                <img src="/assets/WebExport/Icon-Agence2Map.png">
-              </ion-avatar>
+              <ion-icon size="large" name="map"></ion-icon>
               <ion-label>Nice</ion-label>
             </ion-chip>
             </ion-item>
@@ -134,18 +126,15 @@
           <ion-button size="small" color="light" routerLink="/vehicule-spec">Détails</ion-button>
           <ion-item class ="one">
             <ion-chip>
-              <ion-avatar>
-                <img src="/assets/WebExport/Icon-Agence1.png">
-              </ion-avatar>
+                <ion-icon size="large" name="person"></ion-icon>
+
               <ion-label>Michel Fraise</ion-label>
             </ion-chip>
             </ion-item>
 
           <ion-item>
             <ion-chip>
-              <ion-avatar>
-                <img src="/assets/WebExport/Icon-Agence2Map.png">
-              </ion-avatar>
+              <ion-icon size="large" name="map"></ion-icon>
               <ion-label>Grenoble</ion-label>
             </ion-chip>
             </ion-item>
