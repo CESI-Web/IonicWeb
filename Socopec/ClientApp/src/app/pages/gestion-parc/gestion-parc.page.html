@@ -3,12 +3,6 @@
     <img class='logo' src="/assets/WebExport/logo.png" alt="ion" routerLink="/menu-principal">
     <ion-button class="round" expand="block" >Ajouter véhicule</ion-button> 
 
-
-
-
-
-
-
 <ion-card *ngFor="let vehicule of vehicules">
   <ion-card-header>
 <ion-item>
@@ -25,30 +19,28 @@
       </ion-col>
       <ion-col >
 
-          <ion-button size="small" color="danger" routerLink="/vehicule-spec/{{vehicule.vehiId}}">Détails</ion-button>
+          <ion-button size="small" color="light" routerLink="/vehicule-spec/{{vehicule.vehiId}}">Détails</ion-button>
           
           <ion-item>
             <ion-chip>
-              <ion-avatar>
-                <img src="/assets/WebExport/Icon awesome-exclamation-Fat.png">
-              </ion-avatar>
+
+                <ion-icon size="large" name="remove-circle"></ion-icon>
+  
               <ion-label>{{vehicule.vehiStatId}}</ion-label>
             </ion-chip>
             </ion-item>
           <ion-item>
             <ion-chip>
-              <ion-avatar>
-                <img src="/assets/WebExport/Icon-Agence2Map.png">
-              </ion-avatar>
+
+                  <ion-icon size="large" name="map"></ion-icon>
+
               <ion-label>{{vehicule.vehiAgecId}}</ion-label>
             </ion-chip>
             </ion-item>
 
             <ion-item>
             <ion-chip>
-              <ion-avatar>
-                <img src="/assets/WebExport/Icon material-card-membershipFat.png">
-              </ion-avatar>
+              <ion-icon size="large" name="reader"></ion-icon>
               <ion-label>{{vehicule.vehiImmatriculation}}</ion-label>
             </ion-chip>
             </ion-item>
