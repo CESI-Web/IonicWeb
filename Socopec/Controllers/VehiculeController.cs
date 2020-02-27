@@ -27,7 +27,7 @@ namespace Socopec.Controllers
         }
 
         [HttpGet]
-        public IEnumerable Get()
+        public IEnumerable GetList()
         {
             using (socopecContext db = new socopecContext())
             {
@@ -53,16 +53,8 @@ namespace Socopec.Controllers
                 return query.ToList();
             }        
         }
-        [HttpGet]
-        public IEnumerable<Agences> GetInfo()
-        {
-            using (socopecContext db = new socopecContext())
-            {
-                var InformationAgence = db.Agences.ToArray();
-                return InformationAgence.ToArray();
-            }
 
-        }
+        
 
     
 
